@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "ep_00_intro/Episode 0 - Introduction.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Episode 0 - Introduction"
             }
           }
         ]
@@ -172,10 +172,12 @@
   "active": "43e5d8d2ec17953d",
   "lastOpenFiles": [
     "ep_01_basic_types/Episode 1 - Basic types.md",
-    "README.md",
+    "ep_01_basic_types/main",
+    "ep_01_basic_types/main.c",
     "ep_00_intro/Episode 0 - Introduction.md",
-    "ep_01_basic_types",
     "ep_00_intro/Pasted image 20250306134158.png",
+    "README.md",
+    "ep_01_basic_types",
     "Compiled Programming Language.md",
     "assets/ui_elements.png",
     "scripts/interaction_laptop.gd.uid",
@@ -185,8 +187,6 @@
     "interaction.gd.uid",
     "interaction.gd",
     "scenes/characters/player.tscn-3dndjq",
-    "scenes/characters/player.tscn-JYMISR",
-    "scenes/characters/player.tscn-ADfhRr",
     "assets/main_character_walk-Sheet.png",
     "assets/main_character_back_idle-Sheet.png",
     "icon.svg",

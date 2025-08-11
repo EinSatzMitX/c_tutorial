@@ -3,7 +3,7 @@ If you haven't done it yet, check out [My YouTube Channel](https://www.youtube.c
 
 ---
 
-This series is targeted to _absolutely anyone_, who wants to learn the C Programming Language, regardless of wether you are an expert in other languages or completely new to programming.
+This series is targeted to _absolutely anyone_, who wants to learn the C Programming Language, regardless of whether you are an expert in other languages or completely new to programming.
 
 ## List of Tutorials
 | Episode                      | YouTube video |
