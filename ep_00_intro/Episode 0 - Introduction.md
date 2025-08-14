@@ -1,6 +1,6 @@
 This is the introduction to the C Programming Language Tutorial. In this episode you will learn:
 -  What is C?
-- What versions of C are there?
+-  What versions of C are there?
 -  Why should I learn C in 2025?
 -  What programs are required for the tutorial?
 - How do I write and compile my first C program?
@@ -14,8 +14,9 @@ _Picture of Ken Thompson (left) and Dennis Ritchie (right)_
 ---
 C is a Compiled Programming Language, developed by Dennis Ritchie, the creator of Unix, and it first appeared in 1972
 The C Programming Language is often used in Low Level environments, such as Operating Systems or Embedded Systems because it can be compiled to Bare Metal and doesn't require any additional software. 
+C is useful because it has basically no runtime requirements and it is extremely fast.
+C is also useful because when reading code written in C, you can directly tell what the machine is doing in every single line of code, however the language still abstracts enough logic to be a lot easier to understand and use than assembly.
 There are a lot of Compilers for C but the most common ones are GCC (GNU Compiler Collection) and Clang (LLVM-based compiler).
-
 I this tutorial, I will be using clang, however you will probably be able to follow along just fine if you decide to use gcc for the first few episodes.
 
 ## What versions of C are there?
