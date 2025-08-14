@@ -4,3 +4,6 @@
 *.obj
 *.bin
 ep_00_intro/main
+*.mp4
+*.aseprite
+ep_00_intro/manim/media
