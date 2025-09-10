@@ -6,6 +6,12 @@
 ep_00_intro/main
 *.mp4
 *.aseprite
-ep_*/manim/media
-ep_*/manim/__py_cache__
-ep_*/manim/.venv
+ep_*/manim/media/
+ep_*/manim/__py_cache__/
+ep_*/manim/.venv/
+
+# python caches and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
