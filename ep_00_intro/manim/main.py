@@ -56,7 +56,7 @@ class DefaultTemplate(Scene):
         contents_t.set_color(G.ORANGE)
         what_is_c_t = Text("What is C?", font_size=ft_size, font=ft).next_to(contents_t, DOWN*4)
         why_c_t = Text("Why should you learn C?", font_size=ft_size, font=ft).next_to(what_is_c_t, DOWN*2)
-        requirements_t = Text("What programs are required for the tutorial series?", font_size=ft_size, font=ft).next_to(why_c_t, DOWN*2)
+        requirements_t = Text("Required programs", font_size=ft_size, font=ft).next_to(why_c_t, DOWN*2)
         writing_c_t = Text("Writing your own program in C", font_size=ft_size, font=ft).next_to(requirements_t, DOWN*2)
 
 
@@ -173,6 +173,59 @@ class DefaultTemplate(Scene):
 
         self.play(ReplacementTransform(what_is_c_big_t, why_c_big_t))
 
+        importance_t = Text("Base of all modern infrastructure", font=ft, font_size=ft_size).next_to(why_c_big_t, DOWN*3.5)
+        bindings_t = Text("Most languages have C bindings", font=ft, font_size=ft_size).next_to(importance_t, DOWN*2)
+        reverse_t = Text("Useful for Reverse engineering", font=ft, font_size=ft_size).next_to(bindings_t, DOWN*2)
+        lowlevel_t = Text("Used in Low level environments", font=ft, font_size=ft_size).next_to(reverse_t, DOWN*2)
 
+        self.play(FadeIn(importance_t))
+        self.wait(1)       
+        self.play(FadeIn(bindings_t))
+        self.wait(1)       
+        self.play(FadeIn(reverse_t))
+        self.wait(1)       
+        self.play(FadeIn(lowlevel_t))
+        self.wait(1)       
+
+        self.play(FadeOut(importance_t, bindings_t, reverse_t, lowlevel_t))
+
+
+        required_programs_big_t = Text(
+            "Required programs",
+            font_size=ft_size_large,  # or whatever larger size you want
+            font=ft,
+            color=G.ORANGE             # already orange
+        ).move_to(why_c_big_t.get_center())  # position where "Contents" was       
+
+        self.play(ReplacementTransform(why_c_big_t, required_programs_big_t))
+
+        editor_t = Text("Code Editor (VS Code)", font=ft, font_size=ft_size).next_to(required_programs_big_t, DOWN*3.5)
+        shell_t = Text("Unix-like Shell environment", font=ft, font_size=ft_size).next_to(editor_t, DOWN*2)
+        compiler_t = Text("C Compiler (GCC/Clang)", font=ft, font_size=ft_size).next_to(shell_t, DOWN*2)
+
+        gcc_i = ImageMobject("assets/gcc.webp")
+        gcc_i.set_resampling_algorithm(RESAMPLING_ALGORITHMS["linear"])
+        gcc_i.scale(0.5)
+        gcc_i.next_to(compiler_t, DOWN*2)
+
+        llvm_i = ImageMobject("assets/LLVM_logo.png")
+        llvm_i.set_resampling_algorithm(RESAMPLING_ALGORITHMS["linear"])
+        llvm_i.scale(0.5)       
+
+        self.play(FadeIn(editor_t))
+        self.wait(1)       
+        self.play(FadeIn(shell_t))
+        self.wait(1)       
+        self.play(FadeIn(compiler_t))
+        self.wait(1)       
+        self.play(FadeIn(gcc_i))
+        self.wait(1)       
+        self.play(gcc_i.animate.shift(LEFT*2))
+        self.wait(1)
+        llvm_i.next_to(gcc_i, RIGHT*8)
+        self.play(FadeIn(llvm_i))
+        self.wait(1)
+
+        self.play(FadeOut(editor_t, shell_t, compiler_t, gcc_i, llvm_i))
 
         self.wait(2)

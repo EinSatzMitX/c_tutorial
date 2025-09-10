@@ -7,3 +7,5 @@ ep_00_intro/main
 *.mp4
 *.aseprite
 ep_00_intro/manim/media
+ep_00_intro/manim/__py_cache__
+ep_00_intro/manim/.venv
