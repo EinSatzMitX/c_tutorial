@@ -201,16 +201,20 @@ class DefaultTemplate(Scene):
 
         editor_t = Text("Code Editor (VS Code)", font=ft, font_size=ft_size).next_to(required_programs_big_t, DOWN*3.5)
         shell_t = Text("Unix-like Shell environment", font=ft, font_size=ft_size).next_to(editor_t, DOWN*2)
-        compiler_t = Text("C Compiler (GCC/Clang)", font=ft, font_size=ft_size).next_to(shell_t, DOWN*2)
+        compiler_t = Text("C Compiler", font=ft, font_size=ft_size).next_to(shell_t, DOWN*2)
 
         gcc_i = ImageMobject("assets/gcc.webp")
         gcc_i.set_resampling_algorithm(RESAMPLING_ALGORITHMS["linear"])
         gcc_i.scale(0.5)
         gcc_i.next_to(compiler_t, DOWN*2)
+        gcc_t = Text("GCC", font=ft, font_size=ft_size).next_to(gcc_i, DOWN*1.5)
+
 
         llvm_i = ImageMobject("assets/LLVM_logo.png")
         llvm_i.set_resampling_algorithm(RESAMPLING_ALGORITHMS["linear"])
-        llvm_i.scale(0.5)       
+        llvm_i.scale(0.5)
+        llvm_i.next_to(compiler_t, DOWN*3.5)     
+        llvm_t = Text("Clang", font=ft, font_size=ft_size).next_to(llvm_i, DOWN*4.75)
 
         self.play(FadeIn(editor_t))
         self.wait(1)       
@@ -218,14 +222,23 @@ class DefaultTemplate(Scene):
         self.wait(1)       
         self.play(FadeIn(compiler_t))
         self.wait(1)       
-        self.play(FadeIn(gcc_i))
+        self.play(FadeIn(gcc_i), FadeIn(gcc_t))
         self.wait(1)       
-        self.play(gcc_i.animate.shift(LEFT*2))
+        self.play(gcc_i.animate.shift(LEFT*2), gcc_t.animate.shift(LEFT*2))
         self.wait(1)
-        llvm_i.next_to(gcc_i, RIGHT*8)
-        self.play(FadeIn(llvm_i))
+        self.play(FadeIn(llvm_i), FadeIn(llvm_t))
+        self.play(llvm_i.animate.shift(RIGHT*2), llvm_t.animate.shift(RIGHT*2))
         self.wait(1)
 
-        self.play(FadeOut(editor_t, shell_t, compiler_t, gcc_i, llvm_i))
+        self.play(FadeOut(editor_t, shell_t, compiler_t, gcc_i, llvm_i, gcc_t, llvm_t))
+
+        writing_big_t = Text(
+            "Writing your own program",
+            font_size=ft_size_large,  # or whatever larger size you want
+            font=ft,
+            color=G.ORANGE             # already orange
+        ).move_to(required_programs_big_t.get_center())  # position where "Contents" was    
+
+        self.play(ReplacementTransform(required_programs_big_t, writing_big_t))
 
         self.wait(2)
